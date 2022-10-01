@@ -36,7 +36,7 @@ portCheck_meth(){
     while read -r line
     do
         echo "Beginning full nMap scan for $line"
-        nmap -T4 -sC -sV -A -p- -oN $DIRECTORY/nmap_$line.txt "$line"
+        nmap -T4 -sC -sV -A -p- --script smb-enum-shares -oN $DIRECTORY/nmap_$line.txt "$line"
         echo "nMap results saved to $DIRECTORY/nmap_$line.txt"
     done < "$input"
 }
