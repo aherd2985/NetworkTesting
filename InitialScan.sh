@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PATH_TO_TESTSSL="/Users/andrewherd/Documents/testssl.sh"
-
 TODAY=$(date)
 
 MODE="all"
