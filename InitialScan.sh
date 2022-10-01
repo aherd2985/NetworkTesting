@@ -41,6 +41,13 @@ portCheck_meth(){
     done < "$input"
 }
 
+checkDocker_meth(){
+  if ! docker info > /dev/null 2>&1; then
+    echo "This script uses docker, and it isn't running - please start docker and try again!"
+    exit 1
+  fi
+}
+
 DIRECTORY=ServerRecon
 
 echo "Mode is set for $MODE"
